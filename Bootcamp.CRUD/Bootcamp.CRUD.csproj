@@ -52,19 +52,20 @@
   <ItemGroup>
     <Compile Include="Manage\ManageItem.cs" />
     <Compile Include="Manage\ManageSupplier.cs" />
-    <Compile Include="Migrations\201901240058381_AddingModelNew.cs" />
-    <Compile Include="Migrations\201901240058381_AddingModelNew.Designer.cs">
-      <DependentUpon>201901240058381_AddingModelNew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901240220274_AddingModelForeign.cs" />
-    <Compile Include="Migrations\201901240220274_AddingModelForeign.Designer.cs">
-      <DependentUpon>201901240220274_AddingModelForeign.cs</DependentUpon>
+    <Compile Include="Manage\ManageTransaction.cs" />
+    <Compile Include="Manage\ManageTransactionItem.cs" />
+    <Compile Include="Mencoba.cs" />
+    <Compile Include="Migrations\201901241604505_AddingModelTransaction.cs" />
+    <Compile Include="Migrations\201901241604505_AddingModelTransaction.Designer.cs">
+      <DependentUpon>201901241604505_AddingModelTransaction.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Core\BaseModel.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Context\MyContext.cs" />
+    <Compile Include="Model\Transaction.cs" />
+    <Compile Include="Model\TransactionItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -75,11 +76,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201901240058381_AddingModelNew.resx">
-      <DependentUpon>201901240058381_AddingModelNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901240220274_AddingModelForeign.resx">
-      <DependentUpon>201901240220274_AddingModelForeign.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201901241604505_AddingModelTransaction.resx">
+      <DependentUpon>201901241604505_AddingModelTransaction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -22,9 +22,11 @@ namespace Bootcamp.CRUD
                     Console.WriteLine("=============== Pilih Manage =================");
                     Console.WriteLine("1. Supplier");
                     Console.WriteLine("2. Item");
+                    Console.WriteLine("3. Transaction");
                     Console.WriteLine("============================================");
                     Console.Write("Pilihan mu : ");
                     pilihan = Convert.ToChar(Console.ReadLine());
+                    Console.WriteLine("============================================");
                     switch (pilihan)
                     {
                         case '1':
@@ -36,6 +38,12 @@ namespace Bootcamp.CRUD
                         case '2':
                             ManageItem item = new ManageItem();
                             item.Item();
+                            Console.Write("Kembali ke Menu Utama? (y/n) : ");
+                            lagi = Console.ReadLine();
+                            break;
+                        case '3':
+                            ManageTransactionItem transactionItem = new ManageTransactionItem();
+                            transactionItem.ManageTransactoinItem();
                             Console.Write("Kembali ke Menu Utama? (y/n) : ");
                             lagi = Console.ReadLine();
                             break;

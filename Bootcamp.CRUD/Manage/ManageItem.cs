@@ -35,6 +35,8 @@ namespace Bootcamp.CRUD.Manage
                         //untuk input nilai name,joindate dan createdate ke database
                         Console.Write("Insert Name of Item : ");
                         item.Name = Console.ReadLine();
+                        Console.Write("Insert Price of Item : ");
+                        item.Price = Convert.ToInt32 (Console.ReadLine());
                         Console.Write("Insert Quantity of Item : ");
                         item.Quantity = Convert.ToInt16(Console.ReadLine());
                         item.DateIn = DateTimeOffset.Now.LocalDateTime;
@@ -98,6 +100,8 @@ namespace Bootcamp.CRUD.Manage
                             Console.Write("Insert Name of Item : ");
                             get.Name = Console.ReadLine();
                             Console.Write("Insert Quantity of Item : ");
+                            Console.Write("Insert Price of Item : ");
+                            item.Price = Convert.ToInt16(Console.ReadLine());
                             get.Quantity = Convert.ToInt16(Console.ReadLine());
                             Console.Write("Insert Id Supplier of Item : ");
                             idSupplier = Convert.ToInt16(Console.ReadLine());
@@ -155,7 +159,7 @@ namespace Bootcamp.CRUD.Manage
                             //    }
                             //}
                             //Console.Write("Kembali Manage Item? (y/n) : ");
-                        }//lagi = Console.ReadLine();
+                        }
                             break;
                     case '3':
                         Console.Write("Insert Id to Delete Data : ");
