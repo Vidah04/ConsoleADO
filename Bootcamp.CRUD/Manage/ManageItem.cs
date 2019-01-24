@@ -10,7 +10,7 @@ namespace Bootcamp.CRUD.Manage
 {
     public class ManageItem
     {
-
+        public int? idSupplier;
         public void Item()
         {
             string lagi = "";
@@ -39,19 +39,51 @@ namespace Bootcamp.CRUD.Manage
                         item.Quantity = Convert.ToInt16(Console.ReadLine());
                         item.DateIn = DateTimeOffset.Now.LocalDateTime;
                         item.CreateDate = DateTimeOffset.Now.LocalDateTime;
-
-                        _context.Items.Add(item);
-                        result = _context.SaveChanges();
-                        if (result > 0)
+                        Console.Write("Insert Supplier Id : ");
+                        idSupplier = Convert.ToInt16(Console.ReadLine());
+                        if(idSupplier == null)
                         {
-                            Console.WriteLine("Insert Successfully");
+                            Console.Write("Please insert Supplier Id : ");
+                            Console.Read();
                         }
                         else
                         {
-                            Console.WriteLine("Insert Failed");
+                            var getSupplier = _context.Suppliers.Find(idSupplier);
+                            if(getSupplier == null)
+                            {
+                                Console.Write("We don't have Id " + idSupplier);
+                                Console.Read();
+                            }else
+                            {
+                                item.Suppliers = getSupplier;
+
+                                _context.Items.Add(item);
+                                result = _context.SaveChanges();
+                                if (result > 0)
+                                {
+                                    Console.WriteLine("Insert Successfully");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Insert Failed");
+                                }
+                                Console.Write("Kembali Manage Item? (y/n) : ");
+                                lagi = Console.ReadLine();
+                            }
                         }
-                        Console.Write("Kembali Manage Item? (y/n) : ");
-                        lagi = Console.ReadLine();
+
+                        //_context.Items.Add(item);
+                        //result = _context.SaveChanges();
+                        //if (result > 0)
+                        //{
+                        //    Console.WriteLine("Insert Successfully");
+                        //}
+                        //else
+                        //{
+                        //    Console.WriteLine("Insert Failed");
+                        //}
+                        //Console.Write("Kembali Manage Item? (y/n) : ");
+                        //lagi = Console.ReadLine();
                         break;
                     case '2':
                         Console.Write("Insert Id to Update Data : ");
@@ -67,20 +99,64 @@ namespace Bootcamp.CRUD.Manage
                             get.Name = Console.ReadLine();
                             Console.Write("Insert Quantity of Item : ");
                             get.Quantity = Convert.ToInt16(Console.ReadLine());
-                            get.UpdateDate = DateTimeOffset.Now.LocalDateTime;
-                            result = _context.SaveChanges();
-                            if (result > 0)
+                            Console.Write("Insert Id Supplier of Item : ");
+                            idSupplier = Convert.ToInt16(Console.ReadLine());
+                            if (idSupplier == null)
                             {
-                                Console.WriteLine("Update Successfully");
+                                Console.Write("Please insert Supplier Id : ");
+                                Console.Read();
                             }
                             else
                             {
-                                Console.WriteLine("Update Failed");
+                                var getSupplier = _context.Suppliers.Find(idSupplier);
+                                if (getSupplier == null)
+                                {
+                                    Console.Write("We don't have Id " + idSupplier);
+                                    Console.Read();
+                                }
+                                else
+                                {
+                                    get.Suppliers = getSupplier;
+
+                                    _context.Items.Add(item);
+                                    result = _context.SaveChanges();
+                                    if (result > 0)
+                                    {
+                                        Console.WriteLine("Insert Successfully");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Insert Failed");
+                                    }
+                                    Console.Write("Kembali Manage Item? (y/n) : ");
+                                    lagi = Console.ReadLine();
+                                }
                             }
-                        }
-                        Console.Write("Kembali Manage Item? (y/n) : ");
-                        lagi = Console.ReadLine();
-                        break;
+                            // item.Suppliers = getsupplier;
+                            //_context.Items.Add(item);
+                            //result = _context.SaveChanges();
+                            //    if (result > 0)
+                            //{
+                            //    Console.WriteLine("Update Successfully");
+                            //}
+
+
+                            //    Console.Write("Insert Name Supplier of Item : ");
+                            //    get.Suppliers = Convert.ToInt16(Console.ReadLine());
+                            //    get.UpdateDate = DateTimeOffset.Now.LocalDateTime;
+                            //    result = _context.SaveChanges();
+                            //    if (result > 0)
+                            //    {
+                            //        Console.WriteLine("Update Successfully");
+                            //    }
+                            //    else
+                            //    {
+                            //        Console.WriteLine("Update Failed");
+                            //    }
+                            //}
+                            //Console.Write("Kembali Manage Item? (y/n) : ");
+                        }//lagi = Console.ReadLine();
+                            break;
                     case '3':
                         Console.Write("Insert Id to Delete Data : ");
                         var getData = _context.Items.Find(Convert.ToInt16(Console.ReadLine()));
@@ -119,6 +195,7 @@ namespace Bootcamp.CRUD.Manage
                                 Console.WriteLine("Name      : " + tampilin.Name);
                                 Console.WriteLine("Quantity  : " + tampilin.Quantity);
                                 Console.WriteLine("Date In   : " + tampilin.DateIn);
+                                Console.WriteLine("Supplier  : " + tampilin.Suppliers.name);
                                 Console.WriteLine("============================================");
                             }
                             Console.WriteLine("Total Item : " + getDatatoDisplay.Count);

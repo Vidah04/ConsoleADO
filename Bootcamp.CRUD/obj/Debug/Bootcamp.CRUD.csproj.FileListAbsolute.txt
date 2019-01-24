@@ -12,3 +12,4 @@ C:\Users\Anonymous\source\repos\Bootcamp.CRUD\Bootcamp.CRUD\obj\Debug\Bootcamp.C
 C:\Users\Anonymous\source\repos\Bootcamp.CRUD\Bootcamp.CRUD\obj\Debug\Bootcamp.CRUD.pdb
 C:\Users\Anonymous\source\repos\Bootcamp.CRUD\Bootcamp.CRUD\obj\Debug\Bootcamp.CRUD.Migrations.AddingModelNew.resources
 C:\Users\Anonymous\source\repos\Bootcamp.CRUD\Bootcamp.CRUD\obj\Debug\Bootcamp.CRUD.csproj.GenerateResource.cache
+C:\Users\Anonymous\source\repos\Bootcamp.CRUD\Bootcamp.CRUD\obj\Debug\Bootcamp.CRUD.Migrations.AddingModelForeign.resources

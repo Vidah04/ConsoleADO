@@ -12,6 +12,7 @@ namespace Bootcamp.CRUD.Model
         public string Name { get; set; }
         public int Quantity { get; set; }
         public DateTimeOffset DateIn { get; set; }
+        public virtual Supplier Suppliers { get; set; }
        
 
     }

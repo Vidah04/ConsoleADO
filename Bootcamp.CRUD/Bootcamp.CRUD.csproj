@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201901240058381_AddingModelNew.Designer.cs">
       <DependentUpon>201901240058381_AddingModelNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901240220274_AddingModelForeign.cs" />
+    <Compile Include="Migrations\201901240220274_AddingModelForeign.Designer.cs">
+      <DependentUpon>201901240220274_AddingModelForeign.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Core\BaseModel.cs" />
     <Compile Include="Model\Item.cs" />
@@ -73,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201901240058381_AddingModelNew.resx">
       <DependentUpon>201901240058381_AddingModelNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901240220274_AddingModelForeign.resx">
+      <DependentUpon>201901240220274_AddingModelForeign.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
