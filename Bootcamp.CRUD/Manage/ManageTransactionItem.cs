@@ -42,7 +42,7 @@ namespace Bootcamp.CRUD.Manage
                 for (int i = 1; i <= count; i++)
                 {
                     Console.Write("Insert id Item : ");
-                     int? id = Convert.ToInt16(Console.ReadLine());
+                    int? id = Convert.ToInt16(Console.ReadLine());
                     if (id == null)
                     {
                         Console.WriteLine("Please Insert id that you want to buy");
@@ -86,7 +86,24 @@ namespace Bootcamp.CRUD.Manage
                 Console.WriteLine("Total Price : " + total);
                 Console.Write("Balance : ");
                 int? balance = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Exchange :" + (balance - total));
+                Console.WriteLine("Exchange :" + (balance - total));
+
+
+                Console.WriteLine("\n=========================================================");
+                Console.WriteLine("\n                     Transaction Detail                    \n");
+                Console.WriteLine(getTransactionDetail.TransactionDate);
+                Console.WriteLine("\n==========================================================");
+                Console.WriteLine("Name\t\tQuantity\t\tPrice\tTotal\n");
+                Console.WriteLine("\n==========================================================");
+                foreach (var harga in getPrice)
+                {
+                    Console.WriteLine(harga.Items.Name + "\t\t" + harga.Items.Quantity + "\t\t" + harga.Items.Price + "\t" + (harga.Items.Price * harga.Items.Quantity));
+                }
+                Console.WriteLine("============================================================");
+                Console.WriteLine("Total :" + total);
+                Console.WriteLine("Balance :" + balance);
+                Console.WriteLine("Exchange :" + (balance - total));
+            
             }
         }
     }
